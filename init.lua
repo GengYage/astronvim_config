@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "catppuccin-mocha",
+  colorscheme = "github_light_high_contrast",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -51,6 +51,25 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+    },
+    --  lsp config
+    config = {
+      rust_analyzer = {
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = {
+              loadOutDirsFromCheck = true,
+              features = "all",
+            },
+            procMacro = {
+              enable = true,
+            },
+            experimental = {
+              procAttrMacros = true,
+            },
+          },
+        },
+      },
     },
   },
 
